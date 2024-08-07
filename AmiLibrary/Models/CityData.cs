@@ -7,14 +7,9 @@ using System.Threading.Tasks;
 
 namespace AmiLibrary.Models
 {
-    internal class CityData
+    public class CityData
     {
-        using System;
-using System.Collections.Generic;
-using Newtonsoft.Json; // Assurez-vous d'ajouter le package Newtonsoft.Json via NuGet
 
-public class FeatureCollection
-    {
         [JsonProperty("type")]
         public string Type { get; set; }
 

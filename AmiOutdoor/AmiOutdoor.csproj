@@ -8,4 +8,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AmiBusiness\AmiBusiness.csproj" />
+    <ProjectReference Include="..\AmiLibrary\AmiLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

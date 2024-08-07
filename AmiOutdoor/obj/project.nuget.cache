@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "CYEfmniY9NY=",
+  "dgSpecHash": "tZtUr14OB8A=",
   "success": true,
   "projectFilePath": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiOutdoor\\AmiOutdoor.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ismael.vas\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
