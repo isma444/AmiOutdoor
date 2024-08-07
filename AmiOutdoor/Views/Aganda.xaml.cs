@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace AmiOutdoor.Views
 {
     /// <summary>
-    /// Logique d'interaction pour Agenda.xaml
+    /// Logique d'interaction pour Aganda.xaml
     /// </summary>
-    public partial class Agenda : UserControl
+    public partial class Aganda : UserControl
     {
-        public Agenda()
+        public Aganda()
         {
             InitializeComponent();
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AmiOutdoor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1ad8455a8bde43ad96cc9dc58cd8b0d993c76b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68d28a26cbacbf62be49ad50b01e713b375c75fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("AmiOutdoor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AmiOutdoor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
