@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AmiLibrary.Services
 {
-    public class ServicesAPI : IServiceAPI
+    public class ServiceAPI : IServiceAPI
     {
         public async Task<string> CallWebApi(string ApiURl)
         {
