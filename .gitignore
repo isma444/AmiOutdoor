@@ -33,3 +33,5 @@ bld/
 _ReSharper.*
 *.[Ll]og
 *.tlog
+bin/
+obj/
