@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A5E999C-E5C8-4D5D-B23B-A431E6FD2BD2}|AmiLibrary\\AmiLibrary.csproj|c:\\users\\ismael.vas\\source\\repos\\amioutdoor\\amilibrary\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A5E999C-E5C8-4D5D-B23B-A431E6FD2BD2}|AmiLibrary\\AmiLibrary.csproj|solutionrelative:amilibrary\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A5E999C-E5C8-4D5D-B23B-A431E6FD2BD2}|AmiLibrary\\AmiLibrary.csproj|c:\\users\\ismael.vas\\source\\repos\\amioutdoor\\amilibrary\\services\\servicesapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A5E999C-E5C8-4D5D-B23B-A431E6FD2BD2}|AmiLibrary\\AmiLibrary.csproj|solutionrelative:amilibrary\\services\\servicesapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EEDCBC4-2433-4EFB-8821-C19654B0E4F8}|AmiBusiness\\AmiBusiness.csproj|c:\\users\\ismael.vas\\source\\repos\\amioutdoor\\amibusiness\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1A5E999C-E5C8-4D5D-B23B-A431E6FD2BD2}|AmiLibrary\\AmiLibrary.csproj|c:\\users\\ismael.vas\\source\\repos\\amioutdoor\\amilibrary\\services\\iserviceapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A5E999C-E5C8-4D5D-B23B-A431E6FD2BD2}|AmiLibrary\\AmiLibrary.csproj|solutionrelative:amilibrary\\services\\iserviceapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A5E999C-E5C8-4D5D-B23B-A431E6FD2BD2}|AmiLibrary\\AmiLibrary.csproj|c:\\users\\ismael.vas\\source\\repos\\amioutdoor\\amilibrary\\models\\weatherdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A5E999C-E5C8-4D5D-B23B-A431E6FD2BD2}|AmiLibrary\\AmiLibrary.csproj|solutionrelative:amilibrary\\models\\weatherdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A5E999C-E5C8-4D5D-B23B-A431E6FD2BD2}|AmiLibrary\\AmiLibrary.csproj|c:\\users\\ismael.vas\\source\\repos\\amioutdoor\\amilibrary\\models\\citydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A5E999C-E5C8-4D5D-B23B-A431E6FD2BD2}|AmiLibrary\\AmiLibrary.csproj|solutionrelative:amilibrary\\models\\citydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EEDCBC4-2433-4EFB-8821-C19654B0E4F8}|AmiBusiness\\AmiBusiness.csproj|C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\amibusiness\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7EEDCBC4-2433-4EFB-8821-C19654B0E4F8}|AmiBusiness\\AmiBusiness.csproj|solutionrelative:amibusiness\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -26,41 +38,77 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiLibrary\\Class1.cs",
-              "RelativeDocumentMoniker": "AmiLibrary\\Class1.cs",
-              "ToolTip": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiLibrary\\Class1.cs",
-              "RelativeToolTip": "AmiLibrary\\Class1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T10:32:08.086Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiBusiness\\Program.cs",
               "RelativeDocumentMoniker": "AmiBusiness\\Program.cs",
               "ToolTip": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiBusiness\\Program.cs",
               "RelativeToolTip": "AmiBusiness\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAdAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-07T10:27:44.363Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CityData.cs",
+              "DocumentMoniker": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiLibrary\\Models\\CityData.cs",
+              "RelativeDocumentMoniker": "AmiLibrary\\Models\\CityData.cs",
+              "ToolTip": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiLibrary\\Models\\CityData.cs",
+              "RelativeToolTip": "AmiLibrary\\Models\\CityData.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAIwDMAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T12:41:27.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IServiceAPI.cs",
+              "DocumentMoniker": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiLibrary\\Services\\IServiceAPI.cs",
+              "RelativeDocumentMoniker": "AmiLibrary\\Services\\IServiceAPI.cs",
+              "ToolTip": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiLibrary\\Services\\IServiceAPI.cs",
+              "RelativeToolTip": "AmiLibrary\\Services\\IServiceAPI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T12:37:34.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ServicesAPI.cs",
+              "DocumentMoniker": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiLibrary\\Services\\ServicesAPI.cs",
+              "RelativeDocumentMoniker": "AmiLibrary\\Services\\ServicesAPI.cs",
+              "ToolTip": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiLibrary\\Services\\ServicesAPI.cs",
+              "RelativeToolTip": "AmiLibrary\\Services\\ServicesAPI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T12:35:07.304Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "WeatherData.cs",
+              "DocumentMoniker": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiLibrary\\Models\\WeatherData.cs",
+              "RelativeDocumentMoniker": "AmiLibrary\\Models\\WeatherData.cs",
+              "ToolTip": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiLibrary\\Models\\WeatherData.cs",
+              "RelativeToolTip": "AmiLibrary\\Models\\WeatherData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T12:08:12.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiOutdoor\\MainWindow.xaml",
               "RelativeDocumentMoniker": "AmiOutdoor\\MainWindow.xaml",
@@ -72,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\ismael.vas\\source\\repos\\AmiOutdoor\\AmiOutdoor\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "AmiOutdoor\\MainWindow.xaml.cs",
