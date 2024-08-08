@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AmiLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace AmiLibrary.Services
 {
     public interface IServicePostCode
     {
+        Task<PostCodeData> GetPostCodeData(string cityName);
     }
 }

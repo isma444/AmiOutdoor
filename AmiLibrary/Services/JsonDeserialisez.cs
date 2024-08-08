@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace AmiLibrary.Services
 {
-    internal class JsonDeserialisez
+    public class JsonDeserialisez
     {
-        public static WeatherDetails getWeatherDetails(string key, string data)
+        public WeatherDetails GetWeatherDetails(string key, string data)
         {
             var weatherData = JsonConvert.DeserializeObject<WeatherData>(data);
             WeatherDetails weatherdetails = new();
@@ -23,14 +23,14 @@ namespace AmiLibrary.Services
             return weatherdetails;
         }
 
-        public static List<string> getKeyList(string data)
+        public List<string> GetKeyList(string data)
         {
             var list = new List<string>();
             var weatherData = JsonConvert.DeserializeObject<WeatherData>(data) ?? new WeatherData();
             return weatherData.data.Keys.ToList();
         }
 
-        public PostCodeData? GetCoordinates(string data)
+        public PostCodeData GetCoordinates(string data)
         {
             var cityData = JsonConvert.DeserializeObject<CityData>(data);
             if (cityData == null) 

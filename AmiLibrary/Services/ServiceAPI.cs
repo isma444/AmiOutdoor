@@ -23,7 +23,7 @@ namespace AmiLibrary.Services
             }
             else
             {
-                return null;
+                return "";
             }
 
         }

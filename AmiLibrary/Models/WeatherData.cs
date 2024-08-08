@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace  AmiBusiness.Models
+namespace  AmiLibrary.Models
 {
     public class WeatherData
     {

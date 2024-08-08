@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AmiBusiness.Models;
+using AmiLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,7 @@ namespace AmiLibrary.Services
 {
     public interface IServiceWeather
     {
+        Task<WeatherDetails> GetWeatherDetails(string cityName);
+        Task<string> GetWeatherData(PostCodeData postCodeData);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AmiLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,26 +9,25 @@ namespace AmiLibrary.Services
 {
     public class ServicePostCode : IServicePostCode
     {
-        private IServiceAPI _serviceAPI;
-        private string cityURL = "https://api-adresse.data.gouv.fr/search/?q";
+        private string _cityURL = "https://api-adresse.data.gouv.fr/search/?q";
 
-        public ServicePostCode(IServiceAPI serviceAPI, string cityName)
+        private JsonDeserialisez _deserialisez = new JsonDeserialisez();
+        private IServiceAPI _serviceAPI;
+
+        public ServicePostCode(IServiceAPI serviceAPI)
         {
             _serviceAPI = serviceAPI;
-            this.cityURL += cityName + "&type=municipality";
-        }
-        public ServicePostCode(string cityName)
-        {
-            _serviceAPI = new ServiceAPI();
-            this.cityURL += cityName + "&type=municipality";
         }
         public ServicePostCode()
         {
             _serviceAPI = new ServiceAPI();
-            this.cityURL += "Grenoble&type=municipality";
         }
 
-
-
+        public async Task<PostCodeData> GetPostCodeData(string cityName)
+        {
+            _cityURL += cityName + "&type=municipality";
+            string postCodeData = await _serviceAPI.CallWebApi(_cityURL);
+            return _deserialisez.GetCoordinates(postCodeData);
+        }
     }
 }
