@@ -12,6 +12,8 @@ namespace AmiLibrary.Services
     {
         private string _urlWeather = "http://www.infoclimat.fr/public-api/gfs/json?_ll=";
 
+        private string _weatherData;
+
         private JsonDeserialisez _deserialisez = new JsonDeserialisez();
         private IServiceAPI _serviceAPI;
         private IServicePostCode _servicePostCode;
@@ -30,7 +32,11 @@ namespace AmiLibrary.Services
         public async Task<WeatherDetails> GetWeatherDetails(string cityName, string date)
         {
             PostCodeData postCodeData = await _servicePostCode.GetPostCodeData(cityName);
-            return _deserialisez.GetWeatherDetails(date, await GetWeatherData(postCodeData));
+            if (!_weatherData.Contains(date))
+            {
+                _weatherData = await GetWeatherData(postCodeData);
+            }
+            return _deserialisez.GetWeatherDetails(date, _weatherData);
         }
 
         public async Task<string> GetWeatherData(PostCodeData postCodeData)
