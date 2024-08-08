@@ -27,10 +27,10 @@ namespace AmiLibrary.Services
             _servicePostCode = new ServicePostCode();
         }
 
-        public async Task<WeatherDetails> GetWeatherDetails(string cityName)
+        public async Task<WeatherDetails> GetWeatherDetails(string cityName, string date)
         {
             PostCodeData postCodeData = await _servicePostCode.GetPostCodeData(cityName);
-            return _deserialisez.GetWeatherDetails("2024-08-07 23:00:00", await GetWeatherData(postCodeData));
+            return _deserialisez.GetWeatherDetails(date, await GetWeatherData(postCodeData));
         }
 
         public async Task<string> GetWeatherData(PostCodeData postCodeData)

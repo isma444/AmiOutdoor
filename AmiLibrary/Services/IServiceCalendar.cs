@@ -10,6 +10,6 @@ namespace AmiLibrary.Services
 {
     public interface IServiceCalendar
     {
-        Task<WeatherDetails> GetWeatherDetails(string cityName);
+        Task<WeatherDetails> GetWeatherDetails(string cityName, string date);
     }
 }

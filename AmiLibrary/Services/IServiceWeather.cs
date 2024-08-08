@@ -10,7 +10,7 @@ namespace AmiLibrary.Services
 {
     public interface IServiceWeather
     {
-        Task<WeatherDetails> GetWeatherDetails(string cityName);
+        Task<WeatherDetails> GetWeatherDetails(string cityName, string date);
         Task<string> GetWeatherData(PostCodeData postCodeData);
     }
 }

@@ -22,9 +22,9 @@ namespace AmiLibrary.Services
             this._serviceWeather = serviceWeather;
         }
 
-        public async Task<WeatherDetails> GetWeatherDetails(string cityName)
+        public async Task<WeatherDetails> GetWeatherDetails(string cityName, string date)
         {
-            return await _serviceWeather.GetWeatherDetails(cityName);
+            return await _serviceWeather.GetWeatherDetails(cityName, date);
         }
 
     }
