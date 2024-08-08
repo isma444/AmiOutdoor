@@ -13,6 +13,13 @@ namespace AmiLibrary.Services
         private string _urlWeather = "http://www.infoclimat.fr/public-api/gfs/json?_ll=";
 
         private string _weatherData = "";
+        public string WeatherData
+        {
+            get
+            {
+                return _weatherData;
+            }
+        }             
 
         private JsonDeserialisez _deserialisez = new JsonDeserialisez();
         private IServiceAPI _serviceAPI;

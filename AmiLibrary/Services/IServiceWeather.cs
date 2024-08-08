@@ -11,6 +11,7 @@ namespace AmiLibrary.Services
 {
     public interface IServiceWeather
     {
+        string WeatherData {  get;  }
         Task<WeatherDetails> GetWeatherDetails(string cityName, string date);
         Task<string> GetWeatherData(PostCodeData postCodeData);
     }

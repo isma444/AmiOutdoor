@@ -12,6 +12,10 @@ namespace AmiLibrary.Services
     {
         private IServiceWeather _serviceWeather;
 
+        public string GetWeatherData()
+        {
+           return _serviceWeather.WeatherData;
+        }
         public ServiceCalendar()
         {
             this._serviceWeather = new ServiceWeather();

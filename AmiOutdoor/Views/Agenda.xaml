@@ -10,20 +10,32 @@
     <UserControl.DataContext>
         <vm:AgendaViewModel/>
     </UserControl.DataContext>
-    <Grid>
-        <Grid
-            Height="100">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-        </Grid>
-        <TextBlock
-            Text="{Binding nebulosite}"/>
-    </Grid>
+
+    <ItemsControl ItemsSource="{Binding DataList}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="7" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black"
+                            BorderThickness="1"
+                            Margin="1">
+                        <TextBlock Text="{Binding Content}" 
+                                       VerticalAlignment="Center" 
+                                       HorizontalAlignment="Center"  />
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Grid.Row" Value="{Binding Row}" />
+                    <Setter Property="Grid.Column" Value="{Binding Column}" />
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+        </ItemsControl>
+
+       
+    
 </UserControl>
