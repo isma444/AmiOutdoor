@@ -9,7 +9,7 @@ namespace AmiLibrary.Services
 {
     public class ServicePostCode : IServicePostCode
     {
-        private string _cityURL = "https://api-adresse.data.gouv.fr/search/?q";
+        private string _cityURL = "https://api-adresse.data.gouv.fr/search/?q=";
 
         private JsonDeserialisez _deserialisez = new JsonDeserialisez();
         private IServiceAPI _serviceAPI;

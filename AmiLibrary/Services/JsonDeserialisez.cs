@@ -1,4 +1,6 @@
+
 ﻿using AmiLibrary.Models;
+
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -36,8 +38,8 @@ namespace AmiLibrary.Services
                 return null;
             
             return new PostCodeData(cityData.Features.LastOrDefault()!.Properties.Name,
-            cityData.Features.LastOrDefault()!.Properties.X,
-            cityData.Features.LastOrDefault()!.Properties.Y);
+            cityData.Features.LastOrDefault()!.Geometry.Coordinates[0],
+            cityData.Features.LastOrDefault()!.Geometry.Coordinates[1]);
 
         }
     }

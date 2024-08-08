@@ -13,7 +13,7 @@
                     <views:DateSelection></views:DateSelection>
                 </TabItem>
             <TabItem Header="Agenda">
-
+                <views:Agenda/>
             </TabItem>
         </TabControl>
     </Grid>
