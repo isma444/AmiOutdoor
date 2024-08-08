@@ -4,18 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AmiOutdoor"
+        xmlns:views="clr-namespace:AmiOutdoor.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl>
-            
-                <TabItem Header="meteo">
+            <TabItem Header="Creer un événement">
+                    <views:DateSelection></views:DateSelection>
+                </TabItem>
+            <TabItem Header="Agenda">
 
-                </TabItem>
-                <TabItem Header="autre chose">
-                    
-                </TabItem>
-         
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
