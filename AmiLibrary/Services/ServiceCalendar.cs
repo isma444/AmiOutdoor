@@ -12,10 +12,6 @@ namespace AmiLibrary.Services
     {
         private IServiceWeather _serviceWeather;
 
-        public string GetWeatherData()
-        {
-           return _serviceWeather.WeatherData;
-        }
         public ServiceCalendar()
         {
             this._serviceWeather = new ServiceWeather();
@@ -24,6 +20,11 @@ namespace AmiLibrary.Services
         public ServiceCalendar(IServiceWeather serviceWeather)
         {
             this._serviceWeather = serviceWeather;
+        }
+
+        public string GetWeatherData()
+        {
+            return _serviceWeather.WeatherData;
         }
 
         public async Task<WeatherDetails> GetWeatherDetails(string cityName, string date)

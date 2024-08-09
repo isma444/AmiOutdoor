@@ -15,16 +15,35 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel
+            Grid.Column="0"
+            Grid.Row="0">
             <TextBlock Text="Date de début:" />
             <Calendar SelectedDate="{Binding StartDate}" />
-            <TextBlock Text="{Binding StartDate}" FontSize="16"/>
         </StackPanel>
         <StackPanel
-            Grid.Column="1">
+            Grid.Column="0"
+            Grid.Row="1">
             <TextBlock Text="Date de fin:" />
             <Calendar SelectedDate="{Binding EndDate}" />
+        </StackPanel>
+        <StackPanel
+            Grid.Column="1"
+            Grid.Row="0">
+            <TextBlock Text="Start date :" FontSize="16"/>
+            <TextBlock Text="{Binding StartDate}" FontSize="16"/>
+            <TextBlock Text="End date :" FontSize="16"/>
             <TextBlock Text="{Binding EndDate}"  FontSize="16"/>
+            <Button Grid.Column="1" Grid.Row="1" Content="Create event" Command="{Binding CreateEvent}"></Button>
+        </StackPanel>
+        <StackPanel
+            Grid.Column="1"
+            Grid.Row="1">
+            <TextBlock Text="{Binding Event}" FontSize="16"/>
         </StackPanel>
     </Grid>
 </UserControl>

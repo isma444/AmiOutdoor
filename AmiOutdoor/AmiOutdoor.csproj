@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="EPP.PresentationCore" Version="1.0.0" />
     <PackageReference Include="PresentationFramework" Version="4.6.0" />
   </ItemGroup>

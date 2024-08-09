@@ -4,6 +4,7 @@ using AmiLibrary.Services;
 using System.Text.Json.Serialization;
 using System.Windows.Automation;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 
 
@@ -12,6 +13,22 @@ namespace AmiOutdoor.ViewModel
 
     public class AgendaViewModel : INotifyPropertyChanged
     {
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        private async void GetWeatherdetails()
+        {
+            weatherDetails = await _serviceCalendar.GetWeatherDetails("Grenoble", DateTime.Today.ToString("yyyy-MM-dd") + " 05:00:00");
+
+        }
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
         private IServiceCalendar _serviceCalendar;
         public ObservableCollection<GridCell> DataList { get; set; }
      
@@ -60,6 +77,13 @@ namespace AmiOutdoor.ViewModel
                 AddDataInCell();
             }
         }
+        public AgendaViewModel()
+        {
+            DataList = new ObservableCollection<GridCell>();
+            _serviceCalendar = new ServiceCalendar();
+            GetWeatherdetails();
+        }
+
         private async void AddDataInCell()
         {
             var keys = new JsonDeserialisez().GetKeyList(_serviceCalendar.GetWeatherData());
@@ -80,29 +104,6 @@ namespace AmiOutdoor.ViewModel
             }
         }
 
-        public AgendaViewModel()
-        {
-            DataList = new ObservableCollection<GridCell>();
-            _serviceCalendar = new ServiceCalendar();
-            GetWeatherdetails();
-        }
-
-
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private async void GetWeatherdetails()
-        {
-            weatherDetails = await _serviceCalendar.GetWeatherDetails("Grenoble", DateTime.Today.ToString("yyyy-MM-dd") +" 05:00:00");
-   
-        }
-        public void OnPropertyChanged(string propertyName)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
     }
 
     public class GridCell : INotifyPropertyChanged

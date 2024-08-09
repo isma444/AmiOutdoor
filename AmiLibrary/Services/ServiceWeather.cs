@@ -19,7 +19,7 @@ namespace AmiLibrary.Services
             {
                 return _weatherData;
             }
-        }             
+        }
 
         private JsonDeserialisez _deserialisez = new JsonDeserialisez();
         private IServiceAPI _serviceAPI;
@@ -46,7 +46,7 @@ namespace AmiLibrary.Services
             return _deserialisez.GetWeatherDetails(date, _weatherData);
         }
 
-        public async Task<string> GetWeatherData(PostCodeData postCodeData)
+        private async Task<string> GetWeatherData(PostCodeData postCodeData)
         {
 
              _urlWeather += postCodeData.longitude.ToString(new CultureInfo("en-EN"))+ "," + postCodeData.latitude.ToString(new CultureInfo("en-EN"))+ "&_auth=AxlRRgF%2FUHJSfwA3AXcKI1I6UmcBdwcgVytXNAlsUC1UP14%2FVDRXMQRqBHlXeAUzUXwAYw02CTlTOAZ%2BCXtUNQNpUT0BalA3Uj0AZQEuCiFSfFIzASEHIFc8VzkJelA3VDdeJFQ2Vz0EaAR4V2YFOVFjAH8NLQkwUzcGYwlnVDYDYFE1AWpQNlI0AH0BLgo4UmdSYAE6BzlXYVdiCWVQMlQzXj5UN1c1BGMEeFdmBTNRagBkDTsJMlMzBmQJe1QoAxlRRgF%2FUHJSfwA3AXcKI1I0UmwBag%3D%3D&_c=2e86dbc38267d25d9ab17f5edc981a9a";
