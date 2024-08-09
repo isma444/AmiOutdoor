@@ -13,12 +13,8 @@ namespace AmiOutdoor.ViewModel
 {
     internal class DateSelectionViewModel : INotifyPropertyChanged
     {
-        private DateTime? _startDate;
-        private List<Dictionary<DateTime, string>> _events;
-        private string _textEvent;
-        private DateTime? _endDate;
-        private string? _event;
         #region INotifyPropertyChanged
+        private List<Dictionary<DateTime, string>> _events;
         public List<Dictionary<DateTime, string>> Events
         {
             get { return _events; }
@@ -30,46 +26,7 @@ namespace AmiOutdoor.ViewModel
             }
         }
 
-        public string TextEvent
-        {
-            get { return _textEvent; }
-            set
-            {
-                if (_textEvent == value) return;
-                _textEvent = value;
-                OnPropertyChanged(nameof(_textEvent));
-            }
-        }
-        public DateTime? StartDate
-        {
-            get => _startDate;
-            set
-            {
-                if (_startDate != value)
-                {
-                    _startDate = value;
-                    OnPropertyChanged();
-                    OnPropertyChanged(nameof(_startDate));
-                }
-            }
-        }
-
-        
-        public DateTime? EndDate
-        {
-            get => _endDate;
-            set
-            {
-                if (_endDate != value)
-                {
-                    _endDate = value;
-                    OnPropertyChanged();
-                    OnPropertyChanged(nameof(_endDate));
-                }
-            }
-        }
-
-       
+        private string? _event;
         public string? Event
         {
             get => _event;
@@ -84,18 +41,62 @@ namespace AmiOutdoor.ViewModel
             }
         }
 
-        public DateSelectionViewModel()
+        private string _textEvent;
+        public string TextEvent
         {
-            Events = new List<Dictionary<DateTime, string>>();
-            this.CreateEvent = new RelayCommand(this.OnCreateEvent);
+            get { return _textEvent; }
+            set
+            {
+                if (_textEvent == value) return;
+                _textEvent = value;
+                OnPropertyChanged(nameof(_textEvent));
+            }
         }
-        #endregion
+
+        private DateTime? _startDate;
+        public DateTime? StartDate
+        {
+            get => _startDate;
+            set
+            {
+                if (_startDate != value)
+                {
+                    _startDate = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(_startDate));
+                }
+            }
+        }
+
+
+        private DateTime? _endDate;
+        public DateTime? EndDate
+        {
+            get => _endDate;
+            set
+            {
+                if (_endDate != value)
+                {
+                    _endDate = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(_endDate));
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion
+
+        public DateSelectionViewModel()
+        {
+            Events = new List<Dictionary<DateTime, string>>();
+            this.CreateEvent = new RelayCommand(this.OnCreateEvent);
+        }
+
         private void OnCreateEvent()
         {
             if (this.StartDate == null || this.EndDate == null)

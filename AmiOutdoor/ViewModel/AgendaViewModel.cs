@@ -13,21 +13,11 @@ namespace AmiOutdoor.ViewModel
 
     public class AgendaViewModel : INotifyPropertyChanged
     {
+        private IServiceCalendar _serviceCalendar;
+        public ObservableCollection<GridCell> DataList { get; set; }
+
         #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private async void GetWeatherdetails()
-        {
-            weatherDetails = await _serviceCalendar.GetWeatherDetails("Grenoble", DateTime.Today.ToString("yyyy-MM-dd") + " 05:00:00");
-
-        }
-        public void OnPropertyChanged(string propertyName)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+        private WeatherDetails _weatherDetails;
         public WeatherDetails weatherDetails
         {
             get
@@ -42,6 +32,7 @@ namespace AmiOutdoor.ViewModel
                 AddDataInCell();
             }
         }
+        private double _nebulosite;
         public double Nebulosite
         {
             get
@@ -55,6 +46,7 @@ namespace AmiOutdoor.ViewModel
                 OnPropertyChanged(nameof(Nebulosite));
             }
         }
+        private double _rain;
         public double Rain
         {
             get
@@ -69,15 +61,18 @@ namespace AmiOutdoor.ViewModel
             }
         }
 
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
         #endregion
 
-        private IServiceCalendar _serviceCalendar;
-        private double _nebulosite;
-        private WeatherDetails _weatherDetails;
-        private double _rain;
-
-        public ObservableCollection<GridCell> DataList { get; set; }
-       
 
         public AgendaViewModel()
         {
@@ -85,6 +80,14 @@ namespace AmiOutdoor.ViewModel
             _serviceCalendar = new ServiceCalendar();
             GetWeatherdetails();
         }
+
+        private async void GetWeatherdetails()
+        {
+            weatherDetails = await _serviceCalendar.GetWeatherDetails("Grenoble", DateTime.Today.ToString("yyyy-MM-dd") + " 05:00:00");
+
+        }
+       
+
 
         private async void AddDataInCell()
         {
