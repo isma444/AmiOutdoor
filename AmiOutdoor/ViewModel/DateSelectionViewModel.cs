@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -13,7 +14,32 @@ namespace AmiOutdoor.ViewModel
     internal class DateSelectionViewModel : INotifyPropertyChanged
     {
         private DateTime? _startDate;
+        private List<Dictionary<DateTime, string>> _events;
+        private string _textEvent;
+        private DateTime? _endDate;
+        private string? _event;
+        #region INotifyPropertyChanged
+        public List<Dictionary<DateTime, string>> Events
+        {
+            get { return _events; }
+            set 
+            {
+                if(Events == value) return;   
+                _events = value;
+                OnPropertyChanged(nameof(Events));
+            }
+        }
 
+        public string TextEvent
+        {
+            get { return _textEvent; }
+            set
+            {
+                if (_textEvent == value) return;
+                _textEvent = value;
+                OnPropertyChanged(nameof(_textEvent));
+            }
+        }
         public DateTime? StartDate
         {
             get => _startDate;
@@ -28,7 +54,7 @@ namespace AmiOutdoor.ViewModel
             }
         }
 
-        private DateTime? _endDate;
+        
         public DateTime? EndDate
         {
             get => _endDate;
@@ -43,7 +69,7 @@ namespace AmiOutdoor.ViewModel
             }
         }
 
-        private string? _event;
+       
         public string? Event
         {
             get => _event;
@@ -60,8 +86,10 @@ namespace AmiOutdoor.ViewModel
 
         public DateSelectionViewModel()
         {
+            Events = new List<Dictionary<DateTime, string>>();
             this.CreateEvent = new RelayCommand(this.OnCreateEvent);
         }
+        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -80,6 +108,16 @@ namespace AmiOutdoor.ViewModel
             }
             else if (this.StartDate == this.EndDate)
             {
+                if (StartDate == null || EndDate == null) return;
+                DateTime eventDate = (DateTime)StartDate;
+                while (eventDate <= EndDate)
+                {
+                    Dictionary<DateTime, string> keyValues = new Dictionary<DateTime, string>();
+                    keyValues.Add(eventDate, TextEvent);
+                    Events.Add(keyValues);
+
+                    eventDate = eventDate.AddDays(1); 
+                }
                 Event = "Event created on " + this.StartDate.ToString();
             }
             else

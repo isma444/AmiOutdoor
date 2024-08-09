@@ -28,12 +28,20 @@ namespace AmiOutdoor.ViewModel
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-        #endregion
-        private IServiceCalendar _serviceCalendar;
-        public ObservableCollection<GridCell> DataList { get; set; }
-     
-
-        private double _nebulosite;
+        public WeatherDetails weatherDetails
+        {
+            get
+            {
+                return _weatherDetails;
+            }
+            set
+            {
+                if (value == _weatherDetails) return;
+                _weatherDetails = value;
+                OnPropertyChanged(nameof(weatherDetails));
+                AddDataInCell();
+            }
+        }
         public double Nebulosite
         {
             get
@@ -47,8 +55,6 @@ namespace AmiOutdoor.ViewModel
                 OnPropertyChanged(nameof(Nebulosite));
             }
         }
-
-        private double _rain;
         public double Rain
         {
             get
@@ -63,20 +69,16 @@ namespace AmiOutdoor.ViewModel
             }
         }
 
+        #endregion
+
+        private IServiceCalendar _serviceCalendar;
+        private double _nebulosite;
         private WeatherDetails _weatherDetails;
-        public WeatherDetails weatherDetails {
-            get
-            {
-                return _weatherDetails;
-            }
-            set
-            {
-                if (value == _weatherDetails) return;
-                _weatherDetails = value;
-                OnPropertyChanged(nameof(weatherDetails));
-                AddDataInCell();
-            }
-        }
+        private double _rain;
+
+        public ObservableCollection<GridCell> DataList { get; set; }
+       
+
         public AgendaViewModel()
         {
             DataList = new ObservableCollection<GridCell>();
