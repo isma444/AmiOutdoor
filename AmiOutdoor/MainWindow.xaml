@@ -17,10 +17,10 @@
     </Window.Resources>
     <Grid>
         <TabControl>
-            <TabItem Header="Creer un événement">
+            <TabItem Header="Creer un événement" Background="LimeGreen">
                 <views:DateSelection Background="{StaticResource MyRadialGradientBrush}"/>
             </TabItem>
-            <TabItem Header="Agenda">
+            <TabItem Header="Agenda" Background="LimeGreen">
                 <views:Agenda  Background="DarkOrange" />
             </TabItem>
         </TabControl>

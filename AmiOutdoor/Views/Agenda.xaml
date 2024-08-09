@@ -14,6 +14,14 @@
     </UserControl.DataContext>
 
     <UserControl.Resources>
+        <LinearGradientBrush x:Key="MyLinearGradientBrush"
+                              StartPoint="0,0"
+                              EndPoint="1,1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Color="OrangeRed" Offset="0"/>
+                <GradientStop Color="orange" Offset="1"/>
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
         <converters:DoubleToPNGConverter x:Key="DoubleToPNGConverter"/>
     </UserControl.Resources>
 
@@ -28,7 +36,7 @@
                 <Border BorderBrush="Black"
                         BorderThickness="1"
                         Margin="1">
-                    <Grid>
+                    <Grid Background="{StaticResource MyLinearGradientBrush}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
