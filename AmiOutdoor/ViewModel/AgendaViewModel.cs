@@ -14,6 +14,7 @@ namespace AmiOutdoor.ViewModel
     {
         private IServiceCalendar _serviceCalendar;
         public ObservableCollection<GridCell> DataList { get; set; }
+     
 
         private double _nebulosite;
         public double Nebulosite
@@ -64,14 +65,19 @@ namespace AmiOutdoor.ViewModel
             var keys = new JsonDeserialisez().GetKeyList(_serviceCalendar.GetWeatherData());
 
             var i = 0;
-            foreach (var key in keys)
+            foreach (var key in keys.Select(key => DateTime.Parse(key)).GroupBy(dateTime => dateTime.Date).Select(group => group.First()).Take(7)) 
             {
-                if (i >= 7) return;
-                var weatherDetail = await _serviceCalendar.GetWeatherDetails("Grenoble", key);
-                DataList.Add(new GridCell { Row = 0, Column = i, Nebulosite = weatherDetail.Nebulosite.Totale, Rain = weatherDetail.Pluie});
+                
+                var weatherDetail = await _serviceCalendar.GetWeatherDetails("Grenoble", key.ToString("yyyy-MM-dd HH:mm:ss"));
+                DataList.Add(new GridCell { 
+                    Row = 0,
+                    Column = i,
+                    Nebulosite = weatherDetail.Nebulosite.Totale,
+                    Rain = weatherDetail.Pluie,
+                    Dates = key.ToString("dd/MM/y")
+                    });
                 i++;
             }
-
         }
 
         public AgendaViewModel()
@@ -104,6 +110,8 @@ namespace AmiOutdoor.ViewModel
         public int Row { get; set; }
         public int Column { get; set; }
         public string WeatherKey {get; set; }
+
+        public string Dates { get; set; }
 
         private double _nebulosite;
         public double Nebulosite

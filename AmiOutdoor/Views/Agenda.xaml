@@ -28,7 +28,19 @@
                 <Border BorderBrush="Black"
                         BorderThickness="1"
                         Margin="1">
-                    <Image Width="100" Height="100">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock 
+                            Text="{Binding Dates}" 
+                            HorizontalAlignment="Center"/>
+                        <Image 
+                            Grid.Row="1"
+                            Width="100"
+                            Height="100">
                         <Image.Source>
                             <MultiBinding Converter="{StaticResource DoubleToPNGConverter}">
                                 <Binding Path="Rain"/>
@@ -36,6 +48,7 @@
                             </MultiBinding>
                         </Image.Source>
                     </Image>
+                    </Grid>
                 </Border>
             </DataTemplate>
         </ItemsControl.ItemTemplate>
